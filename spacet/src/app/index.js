@@ -28,6 +28,8 @@ const styles = {
     crewBg: 'lg:bg-crew-desktop md:bg-crew-tablet bg-crew-mobile bg-cover h-screen w-screen',
     technologyBg: 'lg:bg-technology-desktop md:bg-technology-tablet bg-technology-mobile bg-cover h-screen w-screen',
     navBg: 'bg-navbg',
+
+    linkUnderline: 'underline underline-offset-[40px] decoration-2 decoration-inherit',
 };
 
 export default styles;

@@ -32,7 +32,7 @@ const Navbar = () => {
 
                 {/* Navbar Links */}
                 <ul className={`${isOpen ? "block" : "hidden"} md:relative absolute md:top-0 top-[47.5px] md:right-0 right-[50px] max-w-[830px] md:w-full w-[67.5%] md:h-[96px] h-screen md:flex md:flex-row md:mx-auto md:justify-center md:items-center md:px-12 pl-12 pr-6 py-6 z-0 text-white text-[16px] font-medium md:gap-[48px] space-y-10 md:space-y-0 tracking-[2.7px] leading-[19.2px] uppercase bg-white bg-opacity-5 backdrop-blur-2xl`}>
-                    <li className="mt-[100px] md:mt-0">
+                    <li className="mt-[100px] md:mt-0 focus:md:underline underline-offset-[40px] decoration-2 decoration-inherit">
                         <Link href="/" className="gap-[12px] cursor-pointer">
                             <span className="font-bold">00 </span>
                             Home

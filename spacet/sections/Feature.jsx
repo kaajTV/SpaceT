@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import { TypingText, StartSteps, StartTech } from "../components";
-import { startingFeatures, exploreTech } from "../constants";
+import { TypingText, StartSteps, StartTech, StartFeature } from "../components";
+import { startingFeatures, exploreTech, startingTechs } from "../constants";
 
 export default function Feature({ exploreTech }) {
     const [selectedItem, setSelectedItem] = useState(exploreTech);
@@ -27,7 +27,20 @@ export default function Feature({ exploreTech }) {
                     {/* List */}
                     {/* <StartTech data={exploreTech} /> */}
 
-                    <ul className="list-none flex justify-center">
+
+                    <div className="flex flex-1 justify-center items-center">
+                        {startingTechs.map((tech) => (
+                            <StartFeature
+                                key={tech}
+                                title={tech.title}
+                                text={tech.text}
+                            />
+                        ))}
+                    </div>
+
+
+
+                    {/* <ul className="list-none flex justify-center">
                         {exploreTech.map((item) => (
                             <li key={item.id} className="mx-4 cursor-pointer">
                                 <button
@@ -52,7 +65,7 @@ export default function Feature({ exploreTech }) {
 
                             />
                         ))}
-                    </div>
+                    </div> */}
 
                     {/* Image */}
                     {/* <img src="/image-launch-vehicle-portrait.jpg" alt="Launch Vehicle" className="max-h-[500px] h-full max-w-[500px] w-full lg:object-right object-top" /> */}
