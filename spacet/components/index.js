@@ -3,6 +3,7 @@ import { TypingText, TitleText } from './CustomTexts';
 import StartSteps from './StartSteps';
 import StartTech from './StartTech';
 import StartFeature from './StartFeature';
+import Navtech from './Navtech';
 
 export {
     Navbar,
@@ -11,4 +12,5 @@ export {
     StartSteps,
     StartTech,
     StartFeature,
+    Navtech,
 }

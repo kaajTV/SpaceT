@@ -6,7 +6,9 @@ import styles from "..";
 export default function Crew() {
     return (
         <div className={`${styles.crewBg} overflow-hidden`}>
-            <Navbar />
+            <div className="relative">
+                <Navbar />
+            </div>
         </div>
     )
 }

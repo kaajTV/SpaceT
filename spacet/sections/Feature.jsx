@@ -4,11 +4,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import { TypingText, StartSteps, StartTech, StartFeature } from "../components";
-import { startingFeatures, exploreTech, startingTechs } from "../constants";
+import { TypingText } from "../components";
+import { exploreTechs } from "../constants";
 
-export default function Feature({ exploreTech }) {
-    const [selectedItem, setSelectedItem] = useState(exploreTech);
+export default function Feature() {
+    const [currentTab, setCurrentTab] = useState('tech-1');
+
+    const tabs = exploreTechs;
+
+    const handleTabClick = (e) => {
+        setCurrentTab(e.target.id);
+    }
+
     return (
         <section className={`${styles.paddings} xl:mt-[175px] lg:mt-[135px] mt-[95px] z-10`}>
             <motion.div
@@ -25,63 +32,35 @@ export default function Feature({ exploreTech }) {
                     className="flex-[0.75] flex justify-between flex-col md:flex-row w-full"
                 >
                     {/* List */}
-                    {/* <StartTech data={exploreTech} /> */}
-
-
                     <div className="flex flex-1 justify-center items-center">
-                        {startingTechs.map((tech) => (
-                            <StartFeature
-                                key={tech}
-                                title={tech.title}
-                                text={tech.text}
-                            />
-                        ))}
-                    </div>
-
-
-
-                    {/* <ul className="list-none flex justify-center">
-                        {exploreTech.map((item) => (
-                            <li key={item.id} className="mx-4 cursor-pointer">
+                        <div>
+                            {tabs.map((tab, i) =>
                                 <button
-                                    onClick={() => setSelectedItem(item)}
+                                    key={i}
+                                    id={tab.id}
+                                    disabled={currentTab === `${tab.id}`}
+                                    onClick={(handleTabClick)}
                                 >
-                                    {item.title}
+                                    {tab.tabTitle}
                                 </button>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className={`${selectedItem ? "block" : "hidden"}`}>
-                        {exploreTech.map((item, index) => (
-                            <StartTech
-                                key={item.id}
-                                {...item}
-                                index={index}
-                                subtitle={item}
-                                title={item}
-                                content={item}
-                                imgUrl={item}
-
-                            />
-                        ))}
-                    </div> */}
-
-                    {/* Image */}
-                    {/* <img src="/image-launch-vehicle-portrait.jpg" alt="Launch Vehicle" className="max-h-[500px] h-full max-w-[500px] w-full lg:object-right object-top" /> */}
+                            )}
+                        </div>
+                        <div>
+                            {tabs.map((tab, i) =>
+                                <div key={i}>
+                                    {currentTab === `${tab.id}` && <div>
+                                        <p>{tab.subtitle}</p>
+                                        <h2>{tab.title}</h2>
+                                        <p>{tab.text}</p>
+                                        <img src={tab.imgUrl} alt={tab.title} />
+                                    </div>}
+                                </div>
+                            )}
+                        </div>
+                    </div>
 
                 </motion.div>
             </motion.div>
         </section>
     );
 };
-
-// export default Feature;
-
-// {startingFeatures.map((feature, index) => (
-//     <StartSteps
-//         key={feature}
-//         number={`${index < 10 ? '' : ''} ${index + 1}`}
-//         text={feature}
-//     />
-// ))}
