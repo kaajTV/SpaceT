@@ -40,6 +40,7 @@ export default function Feature() {
                                     id={tab.id}
                                     disabled={currentTab === `${tab.id}`}
                                     onClick={(handleTabClick)}
+                                    className="w-[80px] h-[80px] rounded-full disabled:bg-white disabled:text-black bg-transparent border border-gray-600 text-white text-[24px] mt-4"
                                 >
                                     {tab.tabTitle}
                                 </button>
@@ -48,12 +49,13 @@ export default function Feature() {
                         <div>
                             {tabs.map((tab, i) =>
                                 <div key={i}>
-                                    {currentTab === `${tab.id}` && <div>
-                                        <p>{tab.subtitle}</p>
-                                        <h2>{tab.title}</h2>
-                                        <p>{tab.text}</p>
-                                        <img src={tab.imgUrl} alt={tab.title} />
-                                    </div>}
+                                    {currentTab === `${tab.id}` &&
+                                        <div>
+                                            <p className="text-[18px] text-white">{tab.subtitle}</p>
+                                            <h2 className="text-[32px] md:text-[64px] text-white">{tab.title}</h2>
+                                            <p className="max-w-[40%] text-[14px] md:text-[16px] text-white">{tab.text}</p>
+                                            <img src={tab.imgUrl} alt={tab.title} />
+                                        </div>}
                                 </div>
                             )}
                         </div>
