@@ -7,7 +7,7 @@ import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText } from "../components";
 import { exploreTechs } from "../constants";
 
-export default function Feature() {
+const Feature = () => {
     const [currentTab, setCurrentTab] = useState('tech-1');
 
     const tabs = exploreTechs;
@@ -17,30 +17,45 @@ export default function Feature() {
     }
 
     return (
-        <section className={`${styles.paddings} xl:mt-[175px] lg:mt-[135px] mt-[95px] z-10`}>
+        <section className="xl:mt-[175px] md:mt-[175px] mt-[120px] z-10"> {/* xl:mt-[175px] lg:mt-[135px] mt-[65px] // xl:top-[212px] md:top-[136px] top-[88px] */}
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
-                className={`${styles.innerWidth} mx-auto flex lg:flow-row flex-col`}
+                className={`${styles.interWidth} mx-auto flex lg:flow-row flex-col`}
             >
-                <TypingText title="Space Launch 101" textStyles="block text-start uppercase" />
+                <div className="flex flex-row md:justify-start justify-center md:items-start items-center md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
+                    <p className="text-white font-bold opacity-25">03</p>
+                    <TypingText title="Space Launch 101" textStyles="font-normal uppercase" />
+                </div>
 
                 <motion.div
                     variants={fadeIn('left', 'tween', 0.2, 1)}
-                    className="flex-[0.75] flex justify-between flex-col md:flex-row w-full"
+                    className="flex-[0.75] flex justify-between flex-col md:flex-row w-full md:mt-[0px] mt-[25px] md:py-6"
                 >
                     {/* List */}
-                    <div className="flex flex-1 justify-center items-center">
-                        <div>
+                    <div className="flex flex-1 flex-col justify-center items-center"> {/* add a flex-row at desktop */}
+                        <div className="flex flex-auto">
+                            {tabs.map((tab, i) =>
+                                <div key={i}>
+                                    {currentTab === `${tab.id}` &&
+                                        <div>
+                                            <img src={tab.imgUrl} alt={tab.title} />
+                                        </div>
+                                    }
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="flex flex-row xl:justify-start justify-center xl:items-start items-center w-full h-full md:gap-10 gap-4 mt-[25px]"> {/* add a flex-col at desktop */}
                             {tabs.map((tab, i) =>
                                 <button
                                     key={i}
                                     id={tab.id}
                                     disabled={currentTab === `${tab.id}`}
                                     onClick={(handleTabClick)}
-                                    className="w-[80px] h-[80px] rounded-full disabled:bg-white disabled:text-black bg-transparent border border-gray-600 text-white text-[24px] mt-4"
+                                    className="xl:w-[80px] md:w-[60px] w-[40px] xl:h-[80px] md:h-[60px] h-[40px] rounded-full disabled:bg-white disabled:text-black bg-transparent border border-gray-600 text-white xl:text-[32px] md:text-[24px] text-[16px]"
                                 >
                                     {tab.tabTitle}
                                 </button>
@@ -50,15 +65,15 @@ export default function Feature() {
                             {tabs.map((tab, i) =>
                                 <div key={i}>
                                     {currentTab === `${tab.id}` &&
-                                        <div>
-                                            <p className="text-[18px] text-white">{tab.subtitle}</p>
-                                            <h2 className="text-[32px] md:text-[64px] text-white">{tab.title}</h2>
-                                            <p className="max-w-[40%] text-[14px] md:text-[16px] text-white">{tab.text}</p>
-                                            <img src={tab.imgUrl} alt={tab.title} />
+                                        <div className="flex flex-col justify-center items-center text-center py-6 px-8">
+                                            <p className="text-[14px] tracking-[2.36px] leading-[16.8px] text-[#d0d6f9] font-[barlow-condensed]">{tab.subtitle}</p>
+                                            <h2 className="mt-4 text-[24px] md:text-[40px] leading-[27.5px] text-white font-[bellefair]">{tab.title}</h2>
+                                            <p className="lg:max-w-[40%] mt-6 text-[15px] md:text-[16px] leading-[25px] text-[#d0d6f9] font-[barlow]">{tab.text}</p>
                                         </div>}
                                 </div>
                             )}
                         </div>
+
                     </div>
 
                 </motion.div>
@@ -66,3 +81,5 @@ export default function Feature() {
         </section>
     );
 };
+
+export default Feature;

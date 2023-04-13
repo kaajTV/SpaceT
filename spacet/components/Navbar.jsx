@@ -9,8 +9,8 @@ import styles from '@/app';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <header className="absolute top-[40px] left-[55px] w-full h-[96px] bg-transparent">
-            <nav className="relative container flex flex-1 flex-nowrap justify-between items-center max-w-[1385px] mx-auto font-barlow-condensed">
+        <header className="absolute xl:top-[40px] left-[55px] w-full md:h-[96px] bg-transparent z-99">
+            <nav className="relative flex flex-1 flex-nowrap justify-between items-center xl:max-w-[1385px] mx-auto font-barlow-condensed">
                 {/* Logo */}
                 <img src="/logo.svg" alt="logo" className="h-[48px] w-[48px]" />
 
@@ -31,28 +31,28 @@ const Navbar = () => {
                 <div className="hidden lg:flex flex-1  max-w-[473px] w-full h-[1px] opacity-[25.15%] bg-[#979797]" />
 
                 {/* Navbar Links */}
-                <ul className={`${isOpen ? "block" : "hidden"} md:relative absolute md:top-0 top-[47.5px] md:right-0 right-[50px] max-w-[830px] md:w-full w-[67.5%] md:h-[96px] h-screen md:flex md:flex-row md:mx-auto md:justify-center md:items-center md:px-12 pl-12 pr-6 py-6 z-0 text-white text-[16px] font-medium md:gap-[48px] space-y-10 md:space-y-0 tracking-[2.7px] leading-[19.2px] uppercase bg-white bg-opacity-5 backdrop-blur-2xl`}>
-                    <li className="mt-[100px] md:mt-0 focus:md:underline underline-offset-[40px] decoration-2 decoration-inherit">
+                <ul className={`${isOpen ? "block" : "hidden"} md:relative absolute md:top-0 top-[47.5px] md:right-0 right-[50px] xl:max-w-[830px] xl:w-full md:w-[79.4%] w-[67.5%] md:h-[96px] h-screen md:flex md:flex-row md:mx-auto md:justify-center md:items-center md:px-12 pl-12 pr-6 py-6 z-0 text-white text-[16px] font-medium md:gap-[48px] space-y-10 md:space-y-0 tracking-[2.7px] leading-[19.2px] uppercase bg-white bg-opacity-5 backdrop-blur-2xl`}>
+                    <li className="mt-[100px] md:mt-0 disabled:md:underline disabled:underline-offset-[40px] disabled:decoration-2 disabled:decoration-inherit">
                         <Link href="/" className="gap-[12px] cursor-pointer">
-                            <span className="font-bold">00 </span>
+                            <span className="hidden xl:inline-block font-bold">00 </span>
                             Home
                         </Link>
                     </li>
                     <li>
                         <Link href="/destination" className="gap-[12px] cursor-pointer">
-                            <span className="font-bold gap-[12px]">01 </span>
+                            <span className="hidden xl:inline-block font-bold gap-[12px]">01 </span>
                             Destination
                         </Link>
                     </li>
                     <li>
                         <Link href="/crew" className="gap-[12px] cursor-pointer">
-                            <span className="font-bold">02 </span>
+                            <span className="hidden xl:inline-block font-bold">02 </span>
                             Crew
                         </Link>
                     </li>
                     <li>
                         <Link href="/technology" className="gap-[12px] cursor-pointer">
-                            <span className="font-bold">03 </span>
+                            <span className="hidden xl:inline-block font-bold">03 </span>
                             Technology
                         </Link>
                     </li>
