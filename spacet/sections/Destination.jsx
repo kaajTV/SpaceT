@@ -48,7 +48,7 @@ const DestinationSection = () => {
                             )}
                         </div>
 
-                        <div className="xl:w-1/2 inline-block text-center">
+                        <div className="xl:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
                             {tabs.map((tab, i) =>
                                 <button
                                     key={i}
