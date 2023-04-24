@@ -1,6 +1,7 @@
 'use client';
 
 import { Navbar } from "../../../components";
+import { DestinationSection } from "../../../sections";
 import styles from "..";
 
 export default function Destination() {
@@ -9,6 +10,7 @@ export default function Destination() {
             <div className="relative">
                 <Navbar />
             </div>
+            <DestinationSection />
         </div>
     )
 }
