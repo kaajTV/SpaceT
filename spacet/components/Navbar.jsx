@@ -32,27 +32,23 @@ const Navbar = () => {
 
                 {/* Navbar Links */}
                 <ul className={`${isOpen ? "block" : "hidden"} md:relative absolute md:top-0 top-[47.5px] md:right-0 right-[50px] xl:max-w-[830px] xl:w-full md:w-[79.4%] w-[67.5%] md:h-[96px] h-screen md:flex md:flex-row md:mx-auto md:justify-center md:items-center md:px-12 pl-12 pr-6 py-6 z-0 text-white text-[16px] font-medium md:gap-[48px] space-y-10 md:space-y-0 tracking-[2.7px] leading-[19.2px] uppercase bg-white bg-opacity-5 backdrop-blur-2xl`}>
-                    <li className="mt-[100px] md:mt-0 disabled:md:underline disabled:underline-offset-[40px] disabled:decoration-2 disabled:decoration-inherit">
-                        <Link href="/" className="gap-[12px] cursor-pointer">
-                            <span className="hidden xl:inline-block font-bold">00 </span>
+                    <li className="mt-[100px] md:mt-0">
+                        <Link href="/" className="xl:before:content-['00'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/destination" className="gap-[12px] cursor-pointer">
-                            <span className="hidden xl:inline-block font-bold gap-[12px]">01 </span>
+                        <Link href="/destination" className="xl:before:content-['01'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
                             Destination
                         </Link>
                     </li>
                     <li>
-                        <Link href="/crew" className="gap-[12px] cursor-pointer">
-                            <span className="hidden xl:inline-block font-bold">02 </span>
+                        <Link href="/crew" className="xl:before:content-['02'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
                             Crew
                         </Link>
                     </li>
                     <li>
-                        <Link href="/technology" className="gap-[12px] cursor-pointer">
-                            <span className="hidden xl:inline-block font-bold">03 </span>
+                        <Link href="/technology" className="xl:before:content-['03'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
                             Technology
                         </Link>
                     </li>

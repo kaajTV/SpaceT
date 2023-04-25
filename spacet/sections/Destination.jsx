@@ -55,7 +55,7 @@ const DestinationSection = () => {
                                     id={tab.id}
                                     disabled={currentTab === `${tab.id}`}
                                     onClick={(handleTabClick)}
-                                    className="md:px-4 px-2 md:text-[16px] text-[14px] font-normal md:tracking-[2.7px] tracking-[2.3625px] md:leading-[19.2px] leading-[16.8px] font-[barlow-condensed] text-white uppercase"
+                                    className="disabled:underline disabled:underline-offset-[12.5px] disabled:decoration-[3px] hover:underline hover:underline-offset-[12.5px] hover:decoration-[3px] hover:decoration-[#97979750] md:px-4 px-2 md:text-[16px] text-[14px] font-normal md:tracking-[2.7px] tracking-[2.3625px] md:leading-[19.2px] leading-[16.8px] font-[barlow-condensed] text-white uppercase"
                                 >
                                     {tab.title}
                                 </button>
