@@ -27,7 +27,7 @@ const DestinationSection = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 className="mx-auto flex flex-col"
             >
-                <div className="flex flex-row md:justify-start justify-center md:items-start items-center xl:px-[114px] md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
+                <div className="flex flex-row md:justify-start justify-center md:items-start items-center xl:pl-[224px] md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
                     <p className="text-white font-bold opacity-25">01</p>
                     <TypingText title="Pick Your Destination" textStyles="font-normal uppercase" />
                 </div>

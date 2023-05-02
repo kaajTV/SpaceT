@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
 import styles from '@/app';
 
+
+// Add framer-motion animations and recreate most of the stuff, but in a better and fancier way.
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
     return (
         <header className="absolute xl:top-[40px] left-[55px] w-full md:h-[96px] bg-transparent z-99">
             <nav className="relative flex flex-1 flex-nowrap justify-between items-center xl:max-w-[1385px] mx-auto font-barlow-condensed">

@@ -84,49 +84,30 @@ export const exploreTechs = [
 export const sliderCrew = [
     {
         id: 'crew-1',
-        imgUrl: '/image-douglas-hurley.png',
         title: 'COMMANDER',
         name: 'DOUGLAS HURLEY',
-        content: 'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
+        text: 'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
+        imgUrl: '/image-douglas-hurley.png',
     },
     {
         id: 'crew-2',
-        imgUrl: '/image-mark-shuttleworth.png',
         title: 'MISSION SPECIALIST',
         name: 'MARK SHUTTLEWORTH',
-        content: 'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.',
+        text: 'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.',
+        imgUrl: '/image-mark-shuttleworth.png',
     },
     {
         id: 'crew-3',
-        imgUrl: '/image-victor-glover.png',
         title: 'PILOT',
         name: 'VICTOR GLOVER',
-        content: 'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.',
+        text: 'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.',
+        imgUrl: '/image-victor-glover.png',
     },
     {
         id: 'crew-4',
-        imgUrl: '/image-anousheh-ansari.png',
         title: 'FLIGHT ENGINEER',
         name: 'ANOUSHEH ANSARI',
-        content: 'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.',
-    },
-];
-
-// Test data
-export const startingTechs = [
-    {
-        id: "tech-1",
-        title: "LAUNCH VEHICLE",
-        text: "A vehicle."
-    },
-    {
-        id: "tech-2",
-        title: "SPACEPORT",
-        text: "A spaceport."
-    },
-    {
-        id: "tech-3",
-        title: "SPACE CAPSULE",
-        text: "A space capsule.",
+        text: 'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.',
+        imgUrl: '/image-anousheh-ansari.png',
     },
 ];

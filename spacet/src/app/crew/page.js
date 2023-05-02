@@ -2,6 +2,7 @@
 
 import { Navbar } from "../../../components";
 import styles from "..";
+import { CrewSection } from "../../../sections";
 
 export default function Crew() {
     return (
@@ -9,6 +10,7 @@ export default function Crew() {
             <div className="relative">
                 <Navbar />
             </div>
+            <CrewSection />
         </div>
     )
 }
