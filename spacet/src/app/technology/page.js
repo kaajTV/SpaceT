@@ -7,7 +7,7 @@ import styles from "..";
 export default function Technology() {
     return (
         <div className={`${styles.technologyBg} overflow-hidden flex flex-col`}>
-            <div className="relative">
+            <div className="relative z-10">
                 <Navbar />
             </div>
             <Feature />

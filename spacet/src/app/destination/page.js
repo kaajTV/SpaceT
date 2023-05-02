@@ -7,7 +7,7 @@ import styles from "..";
 export default function Destination() {
     return (
         <div className={`${styles.destinationBg} overflow-hidden`}>
-            <div className="relative">
+            <div className="relative z-10">
                 <Navbar />
             </div>
             <DestinationSection />

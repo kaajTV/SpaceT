@@ -17,7 +17,7 @@ const Feature = () => {
     }
 
     return (
-        <section className="xl:mt-[175px] md:mt-[175px] mt-[120px] z-10"> {/* xl:mt-[175px] lg:mt-[135px] mt-[65px] // xl:top-[212px] md:top-[136px] top-[88px] */}
+        <section className="xl:mt-[175px] md:mt-[175px] mt-[120px] z-0"> {/* xl:mt-[175px] lg:mt-[135px] mt-[65px] // xl:top-[212px] md:top-[136px] top-[88px] */}
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"

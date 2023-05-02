@@ -7,7 +7,7 @@ import styles from ".";
 export default function Home() {
   return (
     <div className={`${styles.homeBg} overflow-hidden`}>
-      <div className="relative">
+      <div className="relative z-10">
         <Navbar />
       </div>
       <About />

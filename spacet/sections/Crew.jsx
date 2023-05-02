@@ -19,7 +19,7 @@ const CrewSection = () => {
     }
 
     return (
-        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] z-10">
+        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] z-0 md:py-2">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -39,16 +39,18 @@ const CrewSection = () => {
                     {/* Container Div */}
                     <div className="flex flex-1 xl:flex-row flex-col xl:justify-evenly justify-center items-center xl:px-[128px]">
 
-                        <div className="w-4/6 xl:p-12 md:p-12 p-6">
+                        {/* Image Section */}
+                        <div className="relative w-[60vw] h-[60vw] sm:w-[45vw] sm:h-[45vw] md:w-[40vw] md:h-[40vw] xl:p-12 md:p-12 p-6 mb-12">
                             {tabs.map((tab, i) =>
-                                <div className="w-full border-b-[1px] border-[#383b4b]" key={i}>
+                                <div key={i}>
                                     {currentTab === `${tab.id}` &&
-                                        <img src={tab.imgUrl} alt={tab.title} />
+                                        <img src={tab.imgUrl} alt={tab.title} className="border-b-[1px] border-[#383b4b]" />
                                     }
                                 </div>
                             )}
                         </div>
 
+                        {/* Tab Section */}
                         <div className="xl:w-1/2 inline-block text-center">
                             {tabs.map((tab, i) =>
                                 <button
@@ -61,14 +63,15 @@ const CrewSection = () => {
                                 </button>
                             )}
 
-                            <div className="grid">
+                            {/* Text Section */}
+                            <div>
                                 {tabs.map((tab, i) =>
-                                    <div key={i}>
+                                    <div className="pt-6" key={i}>
                                         {currentTab === `${tab.id}` &&
-                                            <div>
-                                                <p className="xl:text-[32px] md:text-[24px] text-[16px] xl:leading-[36.67px] md:leading-[27.5px] leading-[18.34px] font-[bellefair] font-normal text-white mix-blend-normal opacity-50">{tab.title}</p>
-                                                <h2 className="xl:text-[56px] md:text-[40px] text-[24px] xl:leading-[64.18px] md:leading-[45.84px] leading-[27.5px] font-[bellefair] font-normal text-white">{tab.name}</h2>
-                                                <p className="xl:text-[18px] md:text-[16px] text-[15px] xl:leading-[32px] md:leading-[28px] leading-[25px] font-[barlow] font-normal text-[#d0d6f9]">{tab.text}</p>
+                                            <div className="grid grid-cols-1 grid-flow-row gap-2">
+                                                <p className="xl:text-[32px] md:text-[24px] text-[16px] xl:leading-[36.67px] md:leading-[27.5px] leading-[18.34px] font-bellefair font-normal text-white mix-blend-normal opacity-50">{tab.title}</p>
+                                                <h2 className="xl:text-[56px] md:text-[40px] text-[24px] xl:leading-[64.18px] md:leading-[45.84px] leading-[27.5px] font-bellefair font-normal text-white">{tab.name}</h2>
+                                                <p className="pt-4 px-4 xl:text-[18px] md:text-[16px] text-[15px] xl:leading-[32px] md:leading-[28px] leading-[25px] font-barlow font-normal text-[#d0d6f9]">{tab.text}</p>
                                             </div>
                                         }
                                     </div>

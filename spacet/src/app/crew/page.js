@@ -7,7 +7,7 @@ import { CrewSection } from "../../../sections";
 export default function Crew() {
     return (
         <div className={`${styles.crewBg} overflow-hidden`}>
-            <div className="relative">
+            <div className="relative z-10">
                 <Navbar />
             </div>
             <CrewSection />
