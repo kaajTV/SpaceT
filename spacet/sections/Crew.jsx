@@ -75,9 +75,9 @@ const CrewSection = () => {
 
                         {/* Image Section */}
                         {tabs.map((tab, i) =>
-                            <div className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first  z-0" key={i}>
+                            <div className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
                                 {currentTab === `${tab.id}` &&
-                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b-[1px] border-[#383b4b]" />
+                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b xl:border-[#525668] border-[#383b4b]" />
                                 }
                             </div>
                         )}
