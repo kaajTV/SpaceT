@@ -39,11 +39,11 @@ const CrewSection = () => {
                     className="w-full min-h-screen"
                 >
                     {/* Container Div */}
-                    <div className="grid grid-cols-1 justify-center items-center">
+                    <div className="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-2 xl:grid-flow-col justify-center items-center">
 
 
                         {/* Tab Section */}
-                        <div className="md:order-8 flex flex-1 flex-row justify-center items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 z-1">
+                        <div className="xl:row-start-2 xl:row-end-2 xl:col-start-1 xl:col-end-2 xl:pb-48 flex flex-1 flex-row justify-center xl:place-items-start items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 md:order-8 z-1">
                             {tabs.map((tab, i) =>
 
                                 <button
@@ -59,7 +59,7 @@ const CrewSection = () => {
                         </div>
 
                         {/* Text Section */}
-                        <div className="flex flex-1 xl:flex-row flex-col justify-center text-center pt-6">
+                        <div className="xl:row-start-1 xl:row-end-2 xl:col-start-1 xl:col-end-2 flex flex-1 flex-col justify-center text-center pt-6">
                             {tabs.map((tab, i) =>
                                 <div key={i}>
                                     {currentTab === `${tab.id}` &&
@@ -75,9 +75,9 @@ const CrewSection = () => {
 
                         {/* Image Section */}
                         {tabs.map((tab, i) =>
-                            <div className="flex flex-1 order-first md:order-last h-auto mx-auto md:w-full pt-4 md:pt-0 z-0" key={i}>
+                            <div className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first  z-0" key={i}>
                                 {currentTab === `${tab.id}` &&
-                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="w-full md:w-[375px] lg:w-[450px] h-auto mx-auto md:object-cover xl:border-none border-b-[1px] border-[#383b4b]" />
+                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b-[1px] border-[#383b4b]" />
                                 }
                             </div>
                         )}
