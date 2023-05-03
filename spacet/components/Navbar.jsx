@@ -11,8 +11,8 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="absolute xl:top-[40px] left-[55px] w-full md:h-[96px] bg-transparent z-99">
-            <nav className="relative flex flex-1 flex-nowrap justify-between items-center xl:max-w-[1385px] mx-auto font-barlow-condensed">
+        <header className="absolute top-[20px] xl:top-[40px] left-[55px] w-full md:h-[96px] bg-transparent z-99">
+            <nav className="flex flex-1 flex-nowrap justify-between items-center xl:max-w-[1385px] mx-auto font-barlow-condensed">
                 {/* Logo */}
                 <img src="/logo.svg" alt="logo" className="h-[48px] w-[48px]" />
 

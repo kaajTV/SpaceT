@@ -25,7 +25,7 @@ const styles = {
     // Backgrounds
     homeBg: 'lg:bg-home-desktop md:bg-home-tablet bg-home-mobile bg-cover h-screen w-screen',
     destinationBg: 'lg:bg-destination-desktop md:bg-destination-tablet bg-destination-mobile bg-cover h-screen w-screen',
-    crewBg: 'lg:bg-crew-desktop md:bg-crew-tablet bg-crew-mobile bg-cover h-screen w-screen',
+    crewBg: 'lg:bg-crew-desktop md:bg-crew-tablet bg-crew-mobile bg-cover bg-top h-screen w-screen',
     technologyBg: 'lg:bg-technology-desktop md:bg-technology-tablet bg-technology-mobile bg-cover h-screen w-screen',
     navBg: 'bg-navbg',
 

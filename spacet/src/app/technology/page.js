@@ -10,7 +10,9 @@ export default function Technology() {
             <div className="relative z-10">
                 <Navbar />
             </div>
-            <Feature />
+            <div className="relative">
+                <Feature />
+            </div>
         </div>
     )
 }

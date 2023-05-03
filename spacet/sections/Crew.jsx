@@ -8,6 +8,7 @@ import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText } from "../components";
 import { sliderCrew } from "../constants";
+import Image from "next/image";
 
 const CrewSection = () => {
     const [currentTab, setCurrentTab] = useState('crew-1');
@@ -19,7 +20,7 @@ const CrewSection = () => {
     }
 
     return (
-        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] z-0 md:py-2">
+        <section className="w-screen min-h-screen md:py-2 z-0">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -35,49 +36,52 @@ const CrewSection = () => {
 
                 <motion.div
                     variants={fadeIn('right', 'spring', 0.2, 1)}
+                    className="w-full min-h-screen"
                 >
                     {/* Container Div */}
-                    <div className="flex flex-1 xl:flex-row flex-col xl:justify-evenly justify-center items-center xl:px-[128px]">
+                    <div className="grid grid-cols-1 justify-center items-center">
 
-                        {/* Image Section */}
-                        <div className="relative w-[60vw] h-[60vw] sm:w-[45vw] sm:h-[45vw] md:w-[40vw] md:h-[40vw] xl:p-12 md:p-12 p-6 mb-12">
-                            {tabs.map((tab, i) =>
-                                <div key={i}>
-                                    {currentTab === `${tab.id}` &&
-                                        <img src={tab.imgUrl} alt={tab.title} className="border-b-[1px] border-[#383b4b]" />
-                                    }
-                                </div>
-                            )}
-                        </div>
 
                         {/* Tab Section */}
-                        <div className="xl:w-1/2 inline-block text-center">
+                        <div className="md:order-8 flex flex-1 flex-row justify-center items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 z-1">
                             {tabs.map((tab, i) =>
+
                                 <button
                                     key={i}
                                     id={tab.id}
                                     disabled={currentTab === `${tab.id}`}
                                     onClick={(handleTabClick)}
-                                    className="w-[15px] h-[15px] rounded-full border-none disabled:bg-white bg-[#979797] disabled:opacity-[100%] opacity-[18%]"
+                                    className="w-[15px] h-[15px] rounded-full border-none disabled:bg-white bg-[#979797] disabled:opacity-[100%] opacity-[18%] z-10"
                                 >
                                 </button>
-                            )}
 
-                            {/* Text Section */}
-                            <div>
-                                {tabs.map((tab, i) =>
-                                    <div className="pt-6" key={i}>
-                                        {currentTab === `${tab.id}` &&
-                                            <div className="grid grid-cols-1 grid-flow-row gap-2">
-                                                <p className="xl:text-[32px] md:text-[24px] text-[16px] xl:leading-[36.67px] md:leading-[27.5px] leading-[18.34px] font-bellefair font-normal text-white mix-blend-normal opacity-50">{tab.title}</p>
-                                                <h2 className="xl:text-[56px] md:text-[40px] text-[24px] xl:leading-[64.18px] md:leading-[45.84px] leading-[27.5px] font-bellefair font-normal text-white">{tab.name}</h2>
-                                                <p className="pt-4 px-4 xl:text-[18px] md:text-[16px] text-[15px] xl:leading-[32px] md:leading-[28px] leading-[25px] font-barlow font-normal text-[#d0d6f9]">{tab.text}</p>
-                                            </div>
-                                        }
-                                    </div>
-                                )}
-                            </div>
+                            )}
                         </div>
+
+                        {/* Text Section */}
+                        <div className="flex flex-1 xl:flex-row flex-col justify-center text-center pt-6">
+                            {tabs.map((tab, i) =>
+                                <div key={i}>
+                                    {currentTab === `${tab.id}` &&
+                                        <div className="">
+                                            <p className="md:pt-2 xl:text-[32px] md:text-[24px] text-[16px] xl:leading-[36.67px] md:leading-[27.5px] leading-[18.34px] font-bellefair font-normal text-white mix-blend-normal opacity-50">{tab.title}</p>
+                                            <h2 className="md:pt-2 pt-1 xl:text-[56px] md:text-[40px] text-[24px] xl:leading-[64.18px] md:leading-[45.84px] leading-[27.5px] font-bellefair font-normal text-white">{tab.name}</h2>
+                                            <p className="pt-2 mx-auto md:w-2/3 sm:w-4/5 md:pt-5 px-4 xl:text-[18px] md:text-[16px] text-[15px] xl:leading-[32px] md:leading-[28px] leading-[25px] font-barlow font-normal text-[#d0d6f9]">{tab.text}</p>
+                                        </div>
+                                    }
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Image Section */}
+                        {tabs.map((tab, i) =>
+                            <div className="flex flex-1 order-first md:order-last h-auto mx-auto md:w-full pt-4 md:pt-0 z-0" key={i}>
+                                {currentTab === `${tab.id}` &&
+                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="w-full md:w-[375px] lg:w-[450px] h-auto mx-auto md:object-cover xl:border-none border-b-[1px] border-[#383b4b]" />
+                                }
+                            </div>
+                        )}
+
 
                     </div>
                 </motion.div>
