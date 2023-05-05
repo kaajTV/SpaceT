@@ -19,7 +19,7 @@ const DestinationSection = () => {
     }
 
     return (
-        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] z-0">
+        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] w-screen min-h-screen z-0">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
