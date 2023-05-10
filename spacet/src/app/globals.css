@@ -16,10 +16,6 @@
   z-index: 0;
 }
 
-.navbar-item:disabled {
-  border-bottom: 2px solid white;
-  padding: 38px;
-}
 .navbar-item.active {
   border-bottom: 2px solid white;
   padding: 38px;
