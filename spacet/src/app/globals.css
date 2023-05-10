@@ -15,3 +15,8 @@
   backdrop-filter: blur(40.7742px);
   z-index: 0;
 }
+
+a.active {
+  border-bottom: 2px solid white;
+  padding: 38px;
+}

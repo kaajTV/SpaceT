@@ -13,6 +13,16 @@ const Navbar = () => {
         setSidebarOpen(!sidebarOpen);
     };
 
+    const currentPath = window.location.pathname;
+    const navbarItems = document.querySelectorAll('.navbar-item');
+
+    navbarItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === currentPath) {
+            item.classList.add('active');
+        }
+    })
+
     return (
         <>
             {/* Main Container */}
@@ -28,16 +38,16 @@ const Navbar = () => {
 
                     {/* Links (for desktop) */}
                     <div className="hidden h-[98px] w-full max-w-5xl md:flex justify-center items-center space-x-8 py-2 px-4 uppercase font-[barlow-condensed] font-normal text-white text-[18px] xl:text-[20px] leading-[19.2px] tracking-[2.7px] bg-white bg-opacity-5 backdrop-blur-2xl z-10">
-                        <Link href="/">
+                        <Link href="/" className="navbar-item">
                             Home
                         </Link>
-                        <Link href="/destination">
+                        <Link href="/destination" className="navbar-item">
                             Destination
                         </Link>
-                        <Link href="/crew">
+                        <Link href="/crew" className="navbar-item">
                             Crew
                         </Link>
-                        <Link href="/technology">
+                        <Link href="/technology" className="navbar-item">
                             Technology
                         </Link>
                     </div>
