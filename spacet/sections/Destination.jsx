@@ -18,7 +18,7 @@ const DestinationSection = () => {
     }
 
     return (
-        <section className="xl:mt-[175px] md:mt-[140px] mt-[120px] w-screen min-h-screen z-0">
+        <section className="flex md:justify-center justify-start md:items-center items-start pt-12 md:pt-0 w-screen min-h-screen z-0">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -26,7 +26,7 @@ const DestinationSection = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 className="mx-auto flex flex-col"
             >
-                <div className="flex flex-row md:justify-start justify-center md:items-start items-center xl:pl-[224px] md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
+                <div className="flex flex-row md:justify-start justify-center md:items-start items-center lg:pl-[224px] md:px-8 lg:gap-6 gap-4 font-[barlow-condensed] lg:text-[28px] md:text-[20px] text-[16px] lg:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
                     <p className="text-white font-bold opacity-25">01</p>
                     <TypingText title="Pick Your Destination" textStyles="font-normal uppercase" />
                 </div>
@@ -35,9 +35,9 @@ const DestinationSection = () => {
                     variants={fadeIn('up', 'tween', 0.2, 1)}
                     className="flex"
                 >
-                    <div className="flex flex-1 xl:flex-row flex-col xl:justify-evenly justify-center items-center xl:px-[128px]">
+                    <div className="flex flex-1 lg:flex-row flex-col lg:justify-evenly justify-center items-center lg:px-[128px]">
 
-                        <div className="w-1/2 xl:p-12 md:p-12 p-6">
+                        <div className="w-1/2 lg:p-12 md:p-12 p-6">
                             {tabs.map((tab, i) =>
                                 <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25 }} key={i}>
                                     {currentTab === `${tab.id}` &&
@@ -47,7 +47,7 @@ const DestinationSection = () => {
                             )}
                         </div>
 
-                        <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
+                        <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="lg:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
                             {tabs.map((tab, i) =>
                                 <button
                                     key={i}
@@ -66,8 +66,8 @@ const DestinationSection = () => {
                                     <div key={i}>
                                         {currentTab === `${tab.id}` &&
                                             <motion.div variants={fadeIn('up', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="flex flex-col justify-center items-center py-2">
-                                                <h2 className="pt-2 xl:text-[100px] md:text-[80px] text-[56px] font-normal xl:leading-[114.6px] md:leading-[91.68px] leading-[64.18px] font-[bellefair] text-white uppercase">{tab.title}</h2>
-                                                <p className="xl:max-w-[60%] md:max-w-[80%] md:pt-4 pb-4 px-2 xl:text-[18px] md:text-[16px] text-[15px] font-normal xl:leading-[32px] md:leading-[28px] leading-[25px] font-[barlow] text-[#d0d6f9]">{tab.text}</p>
+                                                <h2 className="pt-2 lg:text-[100px] md:text-[80px] text-[56px] font-normal lg:leading-[114.6px] md:leading-[91.68px] leading-[64.18px] font-[bellefair] text-white uppercase">{tab.title}</h2>
+                                                <p className="lg:max-w-[60%] md:max-w-[80%] md:pt-4 pb-4 px-2 lg:text-[18px] md:text-[16px] text-[15px] font-normal lg:leading-[32px] md:leading-[28px] leading-[25px] font-[barlow] text-[#d0d6f9]">{tab.text}</p>
                                                 <div className="inline-block my-6 mx-auto max-w-[473px] w-[90%] h-[1px] opacity-[25.15%] bg-[#979797]" />
                                                 <div className="flex md:flex-row flex-col gap-12 pt-4">
                                                     <div>

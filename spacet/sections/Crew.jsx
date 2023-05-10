@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import styles from "@/app";
-
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText } from "../components";
 import { sliderCrew } from "../constants";
@@ -20,13 +18,13 @@ const CrewSection = () => {
     }
 
     return (
-        <section className="w-screen min-h-screen md:py-2 z-0">
+        <section className="flex md:justify-center justify-start md:items-center items-start pt-12 w-screen min-h-screen z-0">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
-                className="mx-auto"
+                className="mx-auto flex flex-col"
             >
 
                 <div className="flex flex-row md:justify-start justify-center md:items-start items-center xl:pl-[224px] md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
@@ -36,7 +34,6 @@ const CrewSection = () => {
 
                 <motion.div
                     variants={fadeIn('right', 'spring', 0.2, 1)}
-                    className="w-full min-h-screen"
                 >
                     {/* Container Div */}
                     <div className="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-2 xl:grid-flow-col justify-center items-center">
@@ -75,7 +72,7 @@ const CrewSection = () => {
 
                         {/* Image Section */}
                         {tabs.map((tab, i) =>
-                            <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
+                            <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="items-end xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
                                 {currentTab === `${tab.id}` &&
                                     <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b xl:border-[#525668] border-[#383b4b] z-0" />
                                 }

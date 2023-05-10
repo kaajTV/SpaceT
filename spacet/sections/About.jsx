@@ -7,7 +7,7 @@ import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
 
 const About = () => (
-    <section className={`${styles.paddings} xl:mt-[175px] lg:mt-[135px] mt-[95px] w-screen min-h-screen z-0`}>
+    <section className={`${styles.paddings} flex md:justify-center justify-start md:items-center items-start pt-12 w-screen min-h-screen z-0`}>
         <motion.div
             variants={staggerContainer}
             initial="hidden"
