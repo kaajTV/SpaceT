@@ -3,11 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import styles from "@/app";
-
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText } from "../components";
 import { explorePlanets } from "../constants";
+import Image from "next/image";
 
 const DestinationSection = () => {
     const [currentTab, setCurrentTab] = useState('planet-1');
@@ -40,15 +39,15 @@ const DestinationSection = () => {
 
                         <div className="w-1/2 xl:p-12 md:p-12 p-6">
                             {tabs.map((tab, i) =>
-                                <div key={i}>
+                                <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25 }} key={i}>
                                     {currentTab === `${tab.id}` &&
-                                        <img src={tab.imgUrl} alt={tab.title} />
+                                        <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} />
                                     }
-                                </div>
+                                </motion.div>
                             )}
                         </div>
 
-                        <div className="xl:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
+                        <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
                             {tabs.map((tab, i) =>
                                 <button
                                     key={i}
@@ -66,7 +65,7 @@ const DestinationSection = () => {
                                 {tabs.map((tab, i) =>
                                     <div key={i}>
                                         {currentTab === `${tab.id}` &&
-                                            <div className="flex flex-col justify-center items-center py-2">
+                                            <motion.div variants={fadeIn('up', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="flex flex-col justify-center items-center py-2">
                                                 <h2 className="pt-2 xl:text-[100px] md:text-[80px] text-[56px] font-normal xl:leading-[114.6px] md:leading-[91.68px] leading-[64.18px] font-[bellefair] text-white uppercase">{tab.title}</h2>
                                                 <p className="xl:max-w-[60%] md:max-w-[80%] md:pt-4 pb-4 px-2 xl:text-[18px] md:text-[16px] text-[15px] font-normal xl:leading-[32px] md:leading-[28px] leading-[25px] font-[barlow] text-[#d0d6f9]">{tab.text}</p>
                                                 <div className="inline-block my-6 mx-auto max-w-[473px] w-[90%] h-[1px] opacity-[25.15%] bg-[#979797]" />
@@ -80,12 +79,12 @@ const DestinationSection = () => {
                                                         <p className="pt-2 text-[28px] font-normal leading-[32.09px] font-[bellefair] text-white uppercase">{tab.time}</p>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         }
                                     </div>
                                 )}
                             </div>
-                        </div>
+                        </motion.div>
 
                     </div>
                 </motion.div>

@@ -7,10 +7,10 @@ import { CrewSection } from "../../../sections";
 export default function Crew() {
     return (
         <div className={`${styles.crewBg} absolute top-0 left-0 overflow-hidden`}>
-            <div className="z-10">
+            <div className="z-99">
                 <Navbar />
             </div>
-            <div className="xl:mt-[175px] md:mt-[140px] mt-[120px]">
+            <div className="z-0 xl:mt-[200px] md:mt-[140px] mt-[120px]">
                 <CrewSection />
             </div>
         </div >

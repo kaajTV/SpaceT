@@ -43,7 +43,7 @@ const CrewSection = () => {
 
 
                         {/* Tab Section */}
-                        <div className="xl:row-start-2 xl:row-end-2 xl:col-start-1 xl:col-end-2 xl:pb-48 flex flex-1 flex-row justify-center xl:place-items-start items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 md:order-8 z-1">
+                        <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:row-start-2 xl:row-end-2 xl:col-start-1 xl:col-end-2 xl:pb-48 flex flex-1 flex-row justify-center xl:place-items-start items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 md:order-8 z-1">
                             {tabs.map((tab, i) =>
 
                                 <button
@@ -56,18 +56,18 @@ const CrewSection = () => {
                                 </button>
 
                             )}
-                        </div>
+                        </motion.div>
 
                         {/* Text Section */}
                         <div className="xl:row-start-1 xl:row-end-2 xl:col-start-1 xl:col-end-2 flex flex-1 flex-col justify-center text-center pt-6">
                             {tabs.map((tab, i) =>
                                 <div key={i}>
                                     {currentTab === `${tab.id}` &&
-                                        <div className="">
+                                        <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show">
                                             <p className="md:pt-2 xl:text-[32px] md:text-[24px] text-[16px] xl:leading-[36.67px] md:leading-[27.5px] leading-[18.34px] font-bellefair font-normal text-white mix-blend-normal opacity-50">{tab.title}</p>
                                             <h2 className="md:pt-2 pt-1 xl:text-[56px] md:text-[40px] text-[24px] xl:leading-[64.18px] md:leading-[45.84px] leading-[27.5px] font-bellefair font-normal text-white">{tab.name}</h2>
                                             <p className="pt-2 mx-auto md:w-2/3 sm:w-4/5 md:pt-5 px-4 xl:text-[18px] md:text-[16px] text-[15px] xl:leading-[32px] md:leading-[28px] leading-[25px] font-barlow font-normal text-[#d0d6f9]">{tab.text}</p>
-                                        </div>
+                                        </motion.div>
                                     }
                                 </div>
                             )}
@@ -75,11 +75,11 @@ const CrewSection = () => {
 
                         {/* Image Section */}
                         {tabs.map((tab, i) =>
-                            <div className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
+                            <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
                                 {currentTab === `${tab.id}` &&
-                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b xl:border-[#525668] border-[#383b4b]" />
+                                    <Image src={tab.imgUrl} alt={tab.title} width={500} height={500} className="lg:w-[450px] md:w-[375px] w-[250px] h-auto mx-auto md:object-cover border-b xl:border-[#525668] border-[#383b4b] z-0" />
                                 }
-                            </div>
+                            </motion.div>
                         )}
 
 

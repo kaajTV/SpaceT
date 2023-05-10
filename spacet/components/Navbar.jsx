@@ -1,63 +1,101 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import styles from '@/app';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Router } from 'next/router';
 
-
-// Add framer-motion animations and recreate most of the stuff, but in a better and fancier way.
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
 
     return (
-        <header className="absolute top-[20px] xl:top-[40px] left-[55px] w-full md:h-[96px] bg-transparent z-99">
-            <nav className="flex flex-1 flex-nowrap justify-between items-center xl:max-w-[1385px] mx-auto font-barlow-condensed">
-                {/* Logo */}
-                <img src="/logo.svg" alt="logo" className="h-[48px] w-[48px]" />
-
-                {/* Hamburger Menu mr-[96px] */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="flex justify-end md:hidden cursor-pointer absolute top-0 right-[50px] pt-1 pr-8"
-                >
-                    {/* Hamburger Open Menu */}
-                    <img src="/icon-hamburger.svg" alt="Open Menu" className={`fill-current px-2 py-2 h-[48px] w-[48px] cursor-pointer ${isOpen ? "hidden" : "block"}`} />
-
-                    {/* Hamburger Close Menu */}
-                    <img src="/icon-close.svg" alt="Close Menu" className={`fill-current px-2 py-2 h-[48px] w-[48px] cursor-pointer ${isOpen ? "block" : "hidden"}`} />
-                </button>
-
-
-                {/* Thin line between logo and navLinks (only shows when on lg size and up) */}
-                <div className="hidden lg:flex flex-1  max-w-[473px] w-full h-[1px] opacity-[25.15%] bg-[#979797]" />
-
-                {/* Navbar Links */}
-                <ul className={`${isOpen ? "block" : "hidden"} md:relative absolute md:top-0 top-[47.5px] md:right-0 right-[50px] xl:max-w-[830px] xl:w-full md:w-[79.4%] w-[67.5%] md:h-[96px] h-screen md:flex md:flex-row md:mx-auto md:justify-center md:items-center md:px-12 pl-12 pr-6 py-6 z-0 text-white text-[16px] font-medium md:gap-[48px] space-y-10 md:space-y-0 tracking-[2.7px] leading-[19.2px] uppercase bg-white bg-opacity-5 backdrop-blur-2xl`}>
-                    <li className="mt-[100px] md:mt-0">
-                        <Link href="/" className="xl:before:content-['00'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
+        <>
+            <nav className="bg-transparent w-full">
+                <div className="mx-auto flex items-center justify-between py-2 px-4">
+                    {/* Logo */}
+                    <div className="flex">
+                        <Link href="/">
+                            <Image src="/logo.svg" alt="logo" width={50} height={50} />
+                        </Link>
+                    </div>
+                    {/* Line */}
+                    {/* <div className="hidden lg:block">
+                        <div className="w-full max-w-[473px] opacity-[25.15%] bg-[#979797] h-1 mx-4" />
+                    </div> */}
+                    {/* Links */}
+                    <div className="hidden h-[98px] w-full max-w-5xl md:flex justify-center items-center space-x-8 py-2 px-4 uppercase font-[barlow-condensed] font-normal text-white text-[18px] xl:text-[20px] leading-[19.2px] tracking-[2.7px] bg-white bg-opacity-5 backdrop-blur-2xl z-10">
+                        <Link href="/">
                             Home
                         </Link>
-                    </li>
-                    <li>
-                        <Link href="/destination" className="xl:before:content-['01'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
+                        <Link href="/destination">
                             Destination
                         </Link>
-                    </li>
-                    <li>
-                        <Link href="/crew" className="xl:before:content-['02'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
+                        <Link href="/crew">
                             Crew
                         </Link>
-                    </li>
-                    <li>
-                        <Link href="/technology" className="xl:before:content-['03'] before:content-[''] before:font-bold before:pr-1 cursor-pointer hover:underline hover:underline-offset-[40px] hover:decoration-[3px] hover:decoration-[#ffffff50]">
+                        <Link href="/technology">
                             Technology
                         </Link>
-                    </li>
-                </ul>
+                    </div>
+                    <div className="md:hidden">
+                        <button onClick={toggleSidebar}>
+                            <Image
+                                src="/icon-hamburger.svg"
+                                alt="Menu"
+                                width={30}
+                                height={30}
+                            />
+                        </button>
+                    </div>
+                </div>
             </nav>
-        </header>
-    );
-};
+            <AnimatePresence>
+                {sidebarOpen && (
+                    <motion.aside
+                        initial={{ x: '100%' }}
+                        animate={{ x: 0 }}
+                        exit={{ x: '100%' }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed top-0 right-0 h-full w-64 font-[barlow-condensed] font-normal text-white text-[18px] leading-[19.2px] tracking-[2.7px] bg-white bg-opacity-5 backdrop-blur-2xl shadow-lg z-50"
+                    >
+                        <div className="p-4">
+                            <div className="flex justify-end">
+                                <button onClick={toggleSidebar}>
+                                    <Image
+                                        src="/icon-close.svg"
+                                        alt="Close Menu"
+                                        width={30}
+                                        height={30}
+                                    />
+                                </button>
+                            </div>
+                            <nav className="mt-8">
+                                <ul>
+                                    {[
+                                        { path: '/', name: 'Home' },
+                                        { path: '/destination', name: 'Destination' },
+                                        { path: '/crew', name: 'Crew' },
+                                        { path: '/technology', name: 'Technology' },
+                                    ].map((link, index) => (
+                                        <li key={index} className="mb-6">
+                                            <Link href={link.path} onClick={toggleSidebar} className="flex items-center pl-4 pr-8 py-2 border-r-4 uppercase">
+                                                {link.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </nav>
+                        </div>
+                    </motion.aside>
+                )}
+            </AnimatePresence>
+        </>
+    )
+}
 
 export default Navbar;

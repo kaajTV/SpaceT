@@ -6,11 +6,13 @@ import styles from "..";
 
 export default function Destination() {
     return (
-        <div className={`${styles.destinationBg} overflow-hidden`}>
-            <div className="relative z-10">
+        <div className={`${styles.destinationBg} absolute top-0 left-0 overflow-hidden`}>
+            <div className="z-10">
                 <Navbar />
             </div>
-            <DestinationSection />
+            <div className="z-0">
+                <DestinationSection />
+            </div>
         </div>
     )
 }

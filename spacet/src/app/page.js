@@ -6,8 +6,8 @@ import styles from ".";
 
 export default function Home() {
   return (
-    <div className={`${styles.homeBg} overflow-hidden`}>
-      <div className="relative z-10">
+    <div className={`${styles.homeBg} absolute top-0 left-0 overflow-hidden`}>
+      <div className="z-10">
         <Navbar />
       </div>
       <About />

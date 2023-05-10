@@ -6,6 +6,7 @@ import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText } from "../components";
 import { exploreTechs } from "../constants";
+import Image from "next/image";
 
 const Feature = () => {
     const [currentTab, setCurrentTab] = useState('tech-1');
@@ -81,7 +82,7 @@ const Feature = () => {
                                 <div key={i}>
                                     {currentTab === `${tab.id}` &&
                                         <div>
-                                            <img src={tab.imgUrlDesktop} alt={tab.title} />
+                                            <Image src={tab.imgUrlDesktop} alt={tab.title} width={500} height={500} />
                                         </div>
                                     }
                                 </div>
