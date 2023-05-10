@@ -1,5 +1,6 @@
 'use client';
 
+// Navbar Animation
 export const navVariants = {
     hidden: {
         opacity: 0,
@@ -21,6 +22,7 @@ export const navVariants = {
     },
 };
 
+// SlideIn Animation
 export const slideIn = (direction, type, delay, duration) => ({
     hidden: {
         x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
@@ -38,6 +40,7 @@ export const slideIn = (direction, type, delay, duration) => ({
     },
 });
 
+// Animation Container that's needed to animate children
 export const staggerContainer = (staggerChildren, delayChildren) => ({
     hidden: {},
     show: {
@@ -48,6 +51,7 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
     },
 });
 
+// Text animation
 export const textVariant = (delay) => ({
     hidden: {
         y: 50,
@@ -64,6 +68,7 @@ export const textVariant = (delay) => ({
     },
 });
 
+// Text Container Animation that's needed for animation of text
 export const textContainer = {
     hidden: {
         opacity: 0,
@@ -74,6 +79,7 @@ export const textContainer = {
     }),
 };
 
+// Text Animation V.2
 export const textVariant2 = {
     hidden: {
         opacity: 0,
@@ -89,6 +95,7 @@ export const textVariant2 = {
     },
 };
 
+// FadeIn Animation
 export const fadeIn = (direction, type, delay, duration) => ({
     hidden: {
         x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
@@ -108,6 +115,7 @@ export const fadeIn = (direction, type, delay, duration) => ({
     },
 });
 
+// Image Animation
 export const planetVariants = (direction) => ({
     hidden: {
         x: direction === 'left' ? '-100%' : '100%',
@@ -124,6 +132,7 @@ export const planetVariants = (direction) => ({
     },
 });
 
+// ZoomIn Animation
 export const zoomIn = (delay, duration) => ({
     hidden: {
         scale: 0,
@@ -141,6 +150,7 @@ export const zoomIn = (delay, duration) => ({
     },
 });
 
+// Footer Animation
 export const footerVariants = {
     hidden: {
         opacity: 0,

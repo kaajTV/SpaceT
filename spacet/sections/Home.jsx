@@ -6,8 +6,11 @@ import { TypingText, TitleText } from "../components";
 import styles from "@/app";
 import { fadeIn, staggerContainer } from "../utils/motion";
 
+// Home Section/Components
 const About = () => (
+    // Main Container
     <section className={`${styles.paddings} flex md:justify-center justify-start md:items-center items-start pt-12 w-screen min-h-screen z-0`}>
+        {/* Container w/Animation */}
         <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -15,11 +18,10 @@ const About = () => (
             viewport={{ once: false, amount: 0.25 }}
             className={`${styles.innerWidth} mx-auto ${styles.flexCenter} xl:flex-row flex-col`}
         >
+            {/* Animated Text Container */}
             <div className="flex flex-1 flex-col xl:w-1/2 xl:justify-start justify-center xl:items-start items-center">
                 <TypingText title="So, you want to travel to" textStyles="text-center xl:text-start font-barlow-condensed font-normal lg:text-[28px] md:text-[20px] text-[16px] lg:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] lg:leading-[33.6px] md:leading-[24px] leading-[19px] text-[#d0d6f9] uppercase" />
-
                 <TitleText title="Space" textStyles="text-center xl:text-start font-bellefair font-normal md:text-9xl text-[80px] lg:leading-[172px] md:leading-[150px] leading-[100px] uppercase" />
-
                 <motion.p
                     variants={fadeIn('up', 'tween', 0.2, 1)}
                     className="md:w-[60%] w-full font-barlow font-normal md:text-[16px] text-[15px] text-center xl:text-start lg:leading-[32px] md:leading-[28px] leading-[25px] text-[#d0d6f9]"
@@ -27,6 +29,8 @@ const About = () => (
                     Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we'll give you a truly out of this world experience!
                 </motion.p>
             </div>
+
+            {/* Animated Explore Object */}
             <div className="block xl:flex xl:w-1/2 xl:justify-end justify-center">
                 <motion.span
                     variants={fadeIn('left', 'tween', 0.2, 1)}

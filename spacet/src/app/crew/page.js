@@ -10,9 +10,7 @@ export default function Crew() {
             <div className="z-99">
                 <Navbar />
             </div>
-            <div>
-                <CrewSection />
-            </div>
+            <CrewSection />
         </div >
     )
 }

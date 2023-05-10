@@ -8,6 +8,7 @@ import { TypingText } from "../components";
 import { exploreTechs } from "../constants";
 import Image from "next/image";
 
+// Technology Section/Components
 const Feature = () => {
     const [currentTab, setCurrentTab] = useState('tech-1');
 
@@ -18,7 +19,9 @@ const Feature = () => {
     }
 
     return (
+        // Main Container
         <section className="flex md:justify-center justify-start md:items-center items-start pt-12 md:pt-0 w-screen min-h-screen z-0"> {/* xl:mt-[175px] lg:mt-[135px] mt-[65px] // xl:top-[212px] md:top-[136px] top-[88px] */}
+            {/* Container w/Animation */}
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -26,18 +29,21 @@ const Feature = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 className={`${styles.interWidth} mx-auto flex lg:flow-row flex-col`}
             >
+                {/* Animated Text Container */}
                 <div className="flex flex-row md:justify-start justify-center md:items-start items-center md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
                     <p className="text-white font-bold opacity-25">03</p>
                     <TypingText title="Space Launch 101" textStyles="font-normal uppercase" />
                 </div>
 
+                {/* Animated Container for Main Content */}
                 <motion.div
                     variants={fadeIn('left', 'tween', 0.2, 1)}
                     className="flex xl:justify-evenly justify-between flex-col md:flex-row w-full md:mt-[0px] mt-[25px] md:py-6"
                 >
-                    {/* List */}
-                    <div className="flex flex-1 xl:flex-row flex-col xl:justify-evenly justify-center items-center"> {/* add a flex-row at desktop */}
+                    {/* Main Content w/Tab-List */}
+                    <div className="flex flex-1 xl:flex-row flex-col xl:justify-evenly justify-center items-center">
 
+                        {/* Image */}
                         <div className="xl:hidden flex flex-auto">
                             {tabs.map((tab, i) =>
                                 <div key={i}>
@@ -50,6 +56,7 @@ const Feature = () => {
                             )}
                         </div>
 
+                        {/* Tab-List */}
                         <div className="flex xl:flex-col flex-row justify-center xl:items-start items-center xl:w-[50px] w-full h-full md:gap-10 gap-4 xl:mt-0 mt-[25px]"> {/* add a flex-col at desktop */}
                             {tabs.map((tab, i) =>
                                 <button
@@ -64,6 +71,7 @@ const Feature = () => {
                             )}
                         </div>
 
+                        {/* Content from data-list that shows only when the id equals data-list id */}
                         <div>
                             {tabs.map((tab, i) =>
                                 <div key={i}>

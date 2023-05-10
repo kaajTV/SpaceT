@@ -8,6 +8,7 @@ import { TypingText } from "../components";
 import { explorePlanets } from "../constants";
 import Image from "next/image";
 
+// Destination Section/Components
 const DestinationSection = () => {
     const [currentTab, setCurrentTab] = useState('planet-1');
 
@@ -18,7 +19,9 @@ const DestinationSection = () => {
     }
 
     return (
+        // Main Container
         <section className="flex md:justify-center justify-start md:items-center items-start pt-12 md:pt-0 w-screen min-h-screen z-0">
+            {/* Container w/Animation */}
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -26,17 +29,21 @@ const DestinationSection = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 className="mx-auto flex flex-col"
             >
+                {/* Animated Text Container */}
                 <div className="flex flex-row md:justify-start justify-center md:items-start items-center lg:pl-[224px] md:px-8 lg:gap-6 gap-4 font-[barlow-condensed] lg:text-[28px] md:text-[20px] text-[16px] lg:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
                     <p className="text-white font-bold opacity-25">01</p>
                     <TypingText title="Pick Your Destination" textStyles="font-normal uppercase" />
                 </div>
 
+                {/* Animated Container for Main Content */}
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.2, 1)}
                     className="flex"
                 >
+                    {/* Main Content w/Tab-List */}
                     <div className="flex flex-1 lg:flex-row flex-col lg:justify-evenly justify-center items-center lg:px-[128px]">
 
+                        {/* Image */}
                         <div className="w-1/2 lg:p-12 md:p-12 p-6">
                             {tabs.map((tab, i) =>
                                 <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25 }} key={i}>
@@ -47,6 +54,7 @@ const DestinationSection = () => {
                             )}
                         </div>
 
+                        {/* Tab-List */}
                         <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="lg:w-1/2 inline-block text-center"> {/* Add line below active tab and a hover */}
                             {tabs.map((tab, i) =>
                                 <button
@@ -60,7 +68,7 @@ const DestinationSection = () => {
                                 </button>
                             )}
 
-
+                            {/* Content from data-list that shows only when the id equals data-list id */}
                             <div className="flex flex-col justify-center items-center">
                                 {tabs.map((tab, i) =>
                                     <div key={i}>

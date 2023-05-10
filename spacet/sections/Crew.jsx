@@ -8,6 +8,7 @@ import { TypingText } from "../components";
 import { sliderCrew } from "../constants";
 import Image from "next/image";
 
+// Crew Section/Components
 const CrewSection = () => {
     const [currentTab, setCurrentTab] = useState('crew-1');
 
@@ -18,7 +19,9 @@ const CrewSection = () => {
     }
 
     return (
+        // Main Container
         <section className="flex md:justify-center justify-start md:items-center items-start pt-12 w-screen min-h-screen z-0">
+            {/* Container w/Animation */}
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -26,20 +29,21 @@ const CrewSection = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 className="mx-auto flex flex-col"
             >
-
+                {/* Animated Text Container */}
                 <div className="flex flex-row md:justify-start justify-center md:items-start items-center xl:pl-[224px] md:px-8 xl:gap-6 gap-4 font-[barlow-condensed] xl:text-[28px] md:text-[20px] text-[16px] xl:tracking-[4.72px] md:tracking-[3.38px] tracking-[2.7px] leading-[19.2px]">
                     <p className="text-white font-bold opacity-25">02</p>
                     <TypingText title="Meet Your Crew" textStyles="font-normal uppercase" />
                 </div>
 
+                {/* Animated Container for Main Content */}
                 <motion.div
                     variants={fadeIn('right', 'spring', 0.2, 1)}
                 >
-                    {/* Container Div */}
+                    {/* Main Content w/Tab-List */}
                     <div className="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-2 xl:grid-flow-col justify-center items-center">
 
 
-                        {/* Tab Section */}
+                        {/* Tab-List */}
                         <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="xl:row-start-2 xl:row-end-2 xl:col-start-1 xl:col-end-2 xl:pb-48 flex flex-1 flex-row justify-center xl:place-items-start items-center md:gap-4 gap-1 md:pt-4 lg:pb-2 md:order-8 z-1">
                             {tabs.map((tab, i) =>
 
@@ -55,7 +59,7 @@ const CrewSection = () => {
                             )}
                         </motion.div>
 
-                        {/* Text Section */}
+                        {/* Content from data-list that shows only when the id equals data-list id */}
                         <div className="xl:row-start-1 xl:row-end-2 xl:col-start-1 xl:col-end-2 flex flex-1 flex-col justify-center text-center pt-6">
                             {tabs.map((tab, i) =>
                                 <div key={i}>
@@ -70,7 +74,7 @@ const CrewSection = () => {
                             )}
                         </div>
 
-                        {/* Image Section */}
+                        {/* Image */}
                         {tabs.map((tab, i) =>
                             <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} initial="hidden" whileInView="show" className="items-end xl:row-start-1 xl:row-end-3 xl:col-start-2 xl:col-end-3 flex lg:w-1/2 md:w-full h-auto mx-auto md:pt-0 pt-4 xl:order-8 md:order-last order-first z-0" key={i}>
                                 {currentTab === `${tab.id}` &&

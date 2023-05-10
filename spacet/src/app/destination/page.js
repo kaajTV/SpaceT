@@ -10,9 +10,7 @@ export default function Destination() {
             <div className="z-10">
                 <Navbar />
             </div>
-            <div className="z-0">
-                <DestinationSection />
-            </div>
+            <DestinationSection />
         </div>
     )
 }
