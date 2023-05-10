@@ -1,7 +1,7 @@
 'use client';
 
-import About from "./About";
-import Feature from "./Feature";
+import About from "./Home";
+import Feature from "./Technology";
 import DestinationSection from "./Destination";
 import CrewSection from "./Crew";
 
